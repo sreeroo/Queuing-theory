@@ -13,14 +13,15 @@ class ModernEntry(ttk.Frame):
         self._setup_style()
 
     def _create_widgets(self):
-        self.canvas = tk.Canvas(self, height=48, highlightthickness=0, bg='#2d2d2d')
+        self.canvas = tk.Canvas(self, height=48, highlightthickness=0, bg='#2d2d2d',width=400)
         self.canvas.pack(fill=tk.X)
 
         self.entry_frame = ttk.Frame(self.canvas)
         self.entry = ttk.Entry(
             self.entry_frame,
             font=('Segoe UI', 10),
-            style='Modern.TEntry'
+            style='Modern.TEntry',
+            width=40,
         )
 
         self.label = ttk.Label(
@@ -28,7 +29,9 @@ class ModernEntry(ttk.Frame):
             text=self.label_text,
             font=('Segoe UI', 9),
             foreground='#888888',
-            background='#2d2d2d'
+            background='#2d2d2d',
+            wraplength=400,
+            justify=tk.LEFT,
         )
 
         self.canvas.create_window(10, 24, window=self.entry_frame, anchor=tk.W)
@@ -91,7 +94,7 @@ class InputFrame(ttk.LabelFrame):
         self.service_entry.pack(fill=tk.X, padx=15, pady=5)
 
         # Optional n
-        self.n_entry = ModernEntry(self, "n (optional)")
+        self.n_entry = ModernEntry(self, "Wahrscheinlichkeit n Kunden in System (optional)")
         self.n_entry.pack(fill=tk.X, padx=15, pady=5)
 
         # Modern Button

@@ -15,11 +15,11 @@ class ResultFrame(ttk.LabelFrame):
 
         # Increase label widths and use wraplength
         self._add_metric_row('Auslastung (ρ):', 'utilization', 0, 0)
-        self._add_metric_row('Durchschn. im System (L):', 'avg_system', 0, 1)
-        self._add_metric_row('Durchschn. Warteschlangenlänge (Lq):', 'avg_queue', 1, 0)
-        self._add_metric_row('Durchschn. Systemzeit (W):', 'time_system', 1, 1)
-        self._add_metric_row('Durchschn. Wartezeit (Wq):', 'waiting_time', 2, 0)
-        self._add_metric_row('Wahrscheinlichkeit P(n):', 'prob_n', 2, 1)
+        self._add_metric_row('Mittlere Kundenzahl (n_sys):', 'avg_system', 0, 1)
+        self._add_metric_row('Durchschn. Schlangenlänge (n_schlange):', 'avg_queue', 1, 0)
+        self._add_metric_row('Mittlere Aufenthaltsdauer (T):', 'time_system', 1, 1)
+        self._add_metric_row('Mittlere. Wartezeit (W):', 'waiting_time', 2, 0)
+        self._add_metric_row('Wahrscheinlichkeit n in System P(n):', 'prob_n', 2, 1)
 
     def _add_metric_row(self, label_text, key, row, column):
         frame = ttk.Frame(self)
@@ -31,7 +31,7 @@ class ResultFrame(ttk.LabelFrame):
             text=label_text,
             width=25,
             anchor=tk.W,
-            wraplength=200,  # Allows text wrapping if needed
+            wraplength=400,  # Allows text wrapping if needed
             font=('Segoe UI', 9)
         )
         lbl.pack(side=tk.LEFT, fill=tk.X, expand=True)

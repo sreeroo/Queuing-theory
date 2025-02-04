@@ -77,7 +77,7 @@ class PlotFrame:
         self.ax2.plot(ρ_values, Lq_values, color='#ff6b6b')
         self.ax2.set_title("Auslastung vs Warteschlangenlänge", pad=10)
         self.ax2.set_xlabel("Auslastung (ρ)")
-        self.ax2.set_ylabel("Durchschn. Warteschlangenlänge (Lq)")
+        self.ax2.set_ylabel("Durchschn. Schlangenlänge(n_schlange)")
 
 
 
@@ -88,14 +88,14 @@ class PlotFrame:
         self.ax3.plot(valid_values, Wq_values, color='#ffe66d')
         self.ax3.set_title("Ankunftsrate vs Wartezeit", pad=10)
         self.ax3.set_xlabel("Ankunftsrate (λ)")
-        self.ax3.set_ylabel("Durchschn. Wartezeit (Wq)")
+        self.ax3.set_ylabel("Mittlere. Wartezeit (W)")
 
     def _plot_metrics_comparison(self, model):
         metrics = [
-            'Durchschn. im System',
-            'Durchschn. Warteschlange',
-            'Durchschn. Systemzeit',
-            'Durchschn. Wartezeit'
+            'Mittlere Kundenzahl',
+            'Durchschn. Schlangenlänge',
+            'Mittlere Aufenthaltsdauer',
+            'Mittlere. Wartezeit'
         ]
         values = [
             model.avg_system_customers,
